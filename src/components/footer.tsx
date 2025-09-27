@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
 import { useToast } from "@/components/ui/use-toast"
+import { MediaKitGenerator } from "@/components/media-kit-generator"
 
 const footerLinks = {
   services: [
@@ -152,26 +153,26 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Business</h4>
             <ul className="space-y-2">
-              {footerLinks.business.map((link) => (
+                {footerLinks.business.map((link) => (
                 <li key={link.name}>
-                  {link.href.startsWith('http') || link.href.startsWith('/') ? (
-                    link.href.startsWith('http') ? (
-                      <a 
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary-foreground/80 hover:text-white text-sm transition-smooth"
-                      >
-                        {link.name}
-                      </a>
-                    ) : (
-                      <Link 
-                        to={link.href}
-                        className="text-primary-foreground/80 hover:text-white text-sm transition-smooth"
-                      >
-                        {link.name}
-                      </Link>
-                    )
+                  {link.name === "Media Kit (PDF)" ? (
+                    <MediaKitGenerator className="text-primary-foreground/80 hover:text-white text-sm transition-smooth bg-transparent p-0 h-auto font-normal" />
+                  ) : link.href.startsWith('http') ? (
+                    <a 
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-foreground/80 hover:text-white text-sm transition-smooth"
+                    >
+                      {link.name}
+                    </a>
+                  ) : link.href.startsWith('/') ? (
+                    <Link 
+                      to={link.href}
+                      className="text-primary-foreground/80 hover:text-white text-sm transition-smooth"
+                    >
+                      {link.name}
+                    </Link>
                   ) : (
                     <a 
                       href={link.href}

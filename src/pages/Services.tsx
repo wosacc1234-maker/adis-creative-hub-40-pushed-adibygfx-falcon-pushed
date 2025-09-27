@@ -1,5 +1,6 @@
 import { CheckCircle, Clock, Zap, RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { SEOHead } from "@/components/seo-head"
 
 const services = [
   {
@@ -196,7 +197,14 @@ const addOns = [
 
 export default function Services() {
   return (
-    <main className="pt-24 pb-20">
+    <>
+      <SEOHead 
+        title="Services & Pricing - Logo Design, YouTube Thumbnails, Video Editing"
+        description="Professional design services including logo design starting at $149, YouTube thumbnails at $25, and video editing packages. 24-48 hour delivery guaranteed."
+        keywords="logo design services, youtube thumbnail design, video editing services, graphic design pricing, professional design packages"
+        url="https://adilgfx.com/services"
+      />
+      <main className="pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page header */}
         <div className="text-center mb-16">
@@ -352,5 +360,6 @@ export default function Services() {
         </div>
       </div>
     </main>
+    </>
   )
 }

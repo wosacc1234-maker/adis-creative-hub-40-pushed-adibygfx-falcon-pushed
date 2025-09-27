@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Eye, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { BeforeAfterSlider } from "@/components/before-after-slider"
+import { portfolioImages, portfolioImageAlts } from "@/components/portfolio-images"
 
 const categories = ["All", "Logos", "Thumbnails", "Video Editing", "YouTube Branding"]
 
@@ -11,9 +12,10 @@ const portfolioItems = [
     title: "TechFlow Startup Logo",
     category: "Logos",
     description: "Modern logo design for a fintech startup that raised $5M Series A funding",
-    image: "/api/placeholder/400/300",
-    beforeImage: "/api/placeholder/400/300",
-    afterImage: "/api/placeholder/400/300",
+    image: portfolioImages.logos[0],
+    alt: portfolioImageAlts.portfolioLogo1,
+    beforeImage: portfolioImages.beforeAfter.logo,
+    afterImage: portfolioImages.logos[0],
     tags: ["Logo", "Fintech", "Startup"],
     results: "Helped secure $5M funding"
   },
@@ -22,7 +24,8 @@ const portfolioItems = [
     title: "Gaming Channel Thumbnail Pack",
     category: "Thumbnails",
     description: "High-converting thumbnail series that boosted CTR from 2% to 15%",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.thumbnails[0],
+    alt: portfolioImageAlts.portfolioThumbnails1,
     tags: ["Gaming", "YouTube", "CTR"],
     results: "650% CTR improvement"
   },
@@ -31,7 +34,8 @@ const portfolioItems = [
     title: "SaaS Product Launch Video",
     category: "Video Editing",
     description: "Professional launch video with motion graphics that drove $2M in first-month sales",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.video[0],
+    alt: portfolioImageAlts.portfolioVideo1,
     tags: ["SaaS", "Launch", "Motion Graphics"],
     results: "$2M first-month revenue"
   },
@@ -40,7 +44,8 @@ const portfolioItems = [
     title: "MrBeast Style Channel Setup",
     category: "YouTube Branding",
     description: "Complete channel transformation including branding, SEO setup, and content strategy",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.branding[0],
+    alt: portfolioImageAlts.portfolioBranding1,
     tags: ["YouTube", "Channel Setup", "SEO"],
     results: "500K subscribers in 6 months"
   },
@@ -49,7 +54,8 @@ const portfolioItems = [
     title: "E-commerce Brand Identity",
     category: "Logos",
     description: "Complete logo suite and brand identity for $10M e-commerce company",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.logos[1],
+    alt: portfolioImageAlts.portfolioLogo2,
     tags: ["E-commerce", "Brand Identity", "Premium"],
     results: "300% brand recognition increase"
   },
@@ -58,7 +64,8 @@ const portfolioItems = [
     title: "Viral Cooking Thumbnails",
     category: "Thumbnails",
     description: "Thumbnail series that generated over 50M combined views for cooking channel",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.thumbnails[1],
+    alt: portfolioImageAlts.portfolioThumbnails2,
     tags: ["Cooking", "Viral", "YouTube"],
     results: "50M+ total views"
   },
@@ -67,7 +74,8 @@ const portfolioItems = [
     title: "Tech Review Channel Rebrand",
     category: "Video Editing",
     description: "Complete video editing overhaul with custom intro, transitions, and graphics",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.video[0],
+    alt: portfolioImageAlts.portfolioVideo1,
     tags: ["Tech", "Reviews", "Branding"],
     results: "200% engagement increase"
   },
@@ -76,7 +84,8 @@ const portfolioItems = [
     title: "Fitness Influencer Channel",
     category: "YouTube Branding",
     description: "Full YouTube setup with channel art, SEO optimization, and content planning",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.branding[0],
+    alt: portfolioImageAlts.portfolioBranding1,
     tags: ["Fitness", "Influencer", "Growth"],
     results: "1M+ subscribers gained"
   },
@@ -85,7 +94,8 @@ const portfolioItems = [
     title: "Cryptocurrency Exchange Logo",
     category: "Logos",
     description: "Professional logo design for cryptocurrency platform handling $500M+ transactions",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.logos[0],
+    alt: portfolioImageAlts.portfolioLogo1,
     tags: ["Crypto", "Finance", "Trust"],
     results: "Increased user trust by 400%"
   }
@@ -137,8 +147,8 @@ export default function Portfolio() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
               <BeforeAfterSlider
-                beforeImage="/api/placeholder/600/400"
-                afterImage="/api/placeholder/600/400"
+                beforeImage={portfolioImages.beforeAfter.thumbnail}
+                afterImage={portfolioImages.thumbnails[0]}
                 beforeLabel="Old Design"
                 afterLabel="New Design"
                 className="mb-4"
@@ -148,8 +158,8 @@ export default function Portfolio() {
             </div>
             <div>
               <BeforeAfterSlider
-                beforeImage="/api/placeholder/600/400"
-                afterImage="/api/placeholder/600/400"
+                beforeImage={portfolioImages.beforeAfter.logo}
+                afterImage={portfolioImages.logos[0]}
                 beforeLabel="Before"
                 afterLabel="After"
                 className="mb-4"
@@ -170,8 +180,9 @@ export default function Portfolio() {
               <div className="relative aspect-video bg-muted">
                 <img 
                   src={item.image} 
-                  alt={item.title}
+                  alt={item.alt}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="portfolio-overlay">
                   <div className="text-white">

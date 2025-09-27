@@ -1,13 +1,15 @@
 import { ExternalLink, Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { portfolioImages, portfolioImageAlts } from "@/components/portfolio-images"
 
 const portfolioItems = [
   {
     id: 1,
     title: "Gaming Channel Logo",
-    category: "Logo Design",
+    category: "Logo Design", 
     description: "Bold gaming logo that increased brand recognition by 300%",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.logos[0],
+    alt: portfolioImageAlts.portfolioLogo1,
     tags: ["Logo", "Gaming", "Branding"]
   },
   {
@@ -15,7 +17,8 @@ const portfolioItems = [
     title: "Viral YouTube Thumbnail",
     category: "Thumbnail Design",
     description: "This thumbnail achieved 2M+ views and 15% CTR",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.thumbnails[0],
+    alt: portfolioImageAlts.portfolioThumbnails1,
     tags: ["Thumbnail", "YouTube", "High CTR"]
   },
   {
@@ -23,7 +26,8 @@ const portfolioItems = [
     title: "Brand Identity Package",
     category: "Complete Branding",
     description: "Full brand identity that tripled client conversions",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.branding[0],
+    alt: portfolioImageAlts.portfolioBranding1,
     tags: ["Branding", "Identity", "Package"]
   },
   {
@@ -31,7 +35,8 @@ const portfolioItems = [
     title: "Product Launch Video",
     category: "Video Editing",
     description: "Launch video that generated $100K+ in first week",
-    image: "/api/placeholder/400/300",
+    image: portfolioImages.video[0],
+    alt: portfolioImageAlts.portfolioVideo1,
     tags: ["Video", "Launch", "Sales"]
   }
 ]
@@ -61,8 +66,9 @@ export function PortfolioHighlights() {
               <div className="relative aspect-video bg-muted">
                 <img 
                   src={item.image} 
-                  alt={item.title}
+                  alt={item.alt}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="portfolio-overlay">
                   <div className="text-white">

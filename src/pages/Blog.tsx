@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 import { Calendar, Clock, User, ArrowRight, Search, Tag, TrendingUp } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { SEOHead } from "@/components/seo-head"
+import { portfolioImages } from "@/components/portfolio-images"
 
 const categories = ["All", "Design Tips", "YouTube Growth", "Branding", "Tutorials", "Case Studies"]
 
@@ -16,7 +18,7 @@ const blogPosts = [
     author: "Adil",
     date: "2024-01-20",
     readTime: "8 min read",
-    image: "/api/placeholder/800/400",
+    image: portfolioImages.blog[0],
     tags: ["YouTube", "Thumbnails", "CTR", "Growth"],
     featured: true
   },

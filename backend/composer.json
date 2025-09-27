@@ -1,0 +1,17 @@
+{
+    "name": "adilgfx/portfolio-backend",
+    "description": "Backend system for Adil GFX Portfolio website",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "AdilGFX\\": "classes/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

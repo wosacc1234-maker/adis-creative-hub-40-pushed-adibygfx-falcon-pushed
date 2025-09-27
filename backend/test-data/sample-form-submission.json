@@ -1,0 +1,26 @@
+{
+  "test_id": "qa_contact_form_001",
+  "form_type": "contact",
+  "submission_data": {
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "phone": "+1-555-0123",
+    "service": "logo-design",
+    "budget": "500-1000",
+    "timeline": "1-week",
+    "message": "I need a professional logo for my tech startup. Looking for something modern and memorable that will work well on both digital and print materials.",
+    "company": "TechStart Solutions",
+    "referrer": "https://google.com/search?q=logo+designer",
+    "ip_address": "192.168.1.100",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  },
+  "expected_results": {
+    "database_stored": true,
+    "admin_notification_sent": true,
+    "auto_reply_sent": true,
+    "lead_status": "new",
+    "csv_exportable": true
+  },
+  "test_timestamp": "2025-01-20T14:30:00Z",
+  "test_status": "PASSED"
+}

@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { SEOHead } from "@/components/seo-head"
 
 const faqData = [
   {
@@ -92,7 +93,14 @@ const faqData = [
 
 export default function FAQ() {
   return (
-    <main className="pt-24 pb-20">
+    <>
+      <SEOHead 
+        title="Frequently Asked Questions - Design Services FAQ | Adil GFX"
+        description="Get answers to common questions about logo design, YouTube thumbnails, video editing services, pricing, delivery times, and revision policies."
+        keywords="design FAQ, logo design questions, youtube thumbnail FAQ, video editing help, pricing questions, design service policies"
+        url="https://adilgfx.com/faq"
+      />
+      <main className="pt-24 pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page header */}
         <div className="text-center mb-16">
@@ -163,5 +171,6 @@ export default function FAQ() {
         </div>
       </div>
     </main>
+    </>
   )
 }

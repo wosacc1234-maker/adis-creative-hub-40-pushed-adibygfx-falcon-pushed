@@ -150,7 +150,14 @@ export default function Blog() {
   const latestPosts = blogPosts.slice(0, 4)
 
   return (
-    <main className="pt-24 pb-20">
+    <>
+      <SEOHead 
+        title="Design Blog - Tips, Tutorials & Case Studies | Adil GFX"
+        description="Learn logo design, YouTube thumbnail creation, and video editing tips from a professional designer. Get insights from real client case studies and grow your brand."
+        keywords="design blog, logo design tips, youtube thumbnail tutorials, video editing guides, design case studies, branding advice"
+        url="https://adilgfx.com/blog"
+      />
+      <main className="pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page header */}
         <div className="text-center mb-16">
@@ -326,5 +333,6 @@ export default function Blog() {
         </div>
       </div>
     </main>
+    </>
   )
 }

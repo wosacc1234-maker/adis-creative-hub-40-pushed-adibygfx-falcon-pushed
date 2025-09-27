@@ -3,6 +3,7 @@ import { Eye, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { BeforeAfterSlider } from "@/components/before-after-slider"
 import { portfolioImages, portfolioImageAlts } from "@/components/portfolio-images"
+import { SEOHead } from "@/components/seo-head"
 
 const categories = ["All", "Logos", "Thumbnails", "Video Editing", "YouTube Branding"]
 
@@ -109,7 +110,14 @@ export default function Portfolio() {
     : portfolioItems.filter(item => item.category === activeCategory)
 
   return (
-    <main className="pt-24 pb-20">
+    <>
+      <SEOHead 
+        title="Portfolio - Professional Design Work & Case Studies | Adil GFX"
+        description="View our portfolio of logo designs, YouTube thumbnails, and video editing projects. See real results including increased CTR, funding secured, and revenue generated."
+        keywords="design portfolio, logo design examples, youtube thumbnail portfolio, video editing showcase, design case studies, creative work samples"
+        url="https://adilgfx.com/portfolio"
+      />
+      <main className="pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page header */}
         <div className="text-center mb-16">
@@ -242,5 +250,6 @@ export default function Portfolio() {
         </div>
       </div>
     </main>
+    </>
   )
 }

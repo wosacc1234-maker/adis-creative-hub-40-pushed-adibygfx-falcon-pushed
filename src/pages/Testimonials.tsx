@@ -1,6 +1,7 @@
 import { Star, Quote, ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { SEOHead } from "@/components/seo-head"
 
 const testimonials = [
   {
@@ -148,7 +149,14 @@ export default function Testimonials() {
   }
 
   return (
-    <main className="pt-24 pb-20">
+    <>
+      <SEOHead 
+        title="Client Testimonials & Case Studies - Proven Results | Adil GFX"
+        description="Read real testimonials from 500+ satisfied clients. See how our logo design, YouTube thumbnails, and video editing services delivered measurable business growth."
+        keywords="client testimonials, design reviews, case studies, youtube growth results, logo design success stories, video editing testimonials"
+        url="https://adilgfx.com/testimonials"
+      />
+      <main className="pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page header */}
         <div className="text-center mb-16">
@@ -392,5 +400,6 @@ export default function Testimonials() {
         </div>
       </div>
     </main>
+    </>
   )
 }

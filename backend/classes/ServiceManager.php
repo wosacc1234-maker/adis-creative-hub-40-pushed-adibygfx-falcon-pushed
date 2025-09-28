@@ -72,14 +72,22 @@ class ServiceManager {
     
     public function createService($data) {
         try {
+            // Process features if they're provided as array
+            if (isset($data['features']) && is_array($data['features'])) {
+                $data['features'] = json_encode($data['features']);
+            }
+            
             $query = "INSERT INTO services (title, slug, description, icon, is_active, sort_order) 
-                     VALUES (:title, :slug, :description, :icon, :is_active, :sort_order)";
+                     VALUES (:title, :slug, :description, :icon, :price, :features, :popular, :is_active, :sort_order)";
             
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':title', $data['title']);
             $stmt->bindParam(':slug', $data['slug']);
             $stmt->bindParam(':description', $data['description']);
             $stmt->bindParam(':icon', $data['icon']);
+            $stmt->bindParam(':price', $data['price']);
+            $stmt->bindParam(':features', $data['features']);
+            $stmt->bindParam(':popular', $data['popular']);
             $stmt->bindParam(':is_active', $data['is_active']);
             $stmt->bindParam(':sort_order', $data['sort_order']);
             
@@ -94,9 +102,15 @@ class ServiceManager {
     
     public function updateService($id, $data) {
         try {
+            // Process features if they're provided as array
+            if (isset($data['features']) && is_array($data['features'])) {
+                $data['features'] = json_encode($data['features']);
+            }
+            
             $query = "UPDATE services SET 
-                     title = :title, slug = :slug, description = :description, 
-                     icon = :icon, is_active = :is_active, sort_order = :sort_order 
+                     title = :title, slug = :slug, description = :description, icon = :icon, 
+                     price = :price, features = :features, popular = :popular, 
+                     is_active = :is_active, sort_order = :sort_order 
                      WHERE id = :id";
             
             $stmt = $this->conn->prepare($query);
@@ -105,6 +119,9 @@ class ServiceManager {
             $stmt->bindParam(':slug', $data['slug']);
             $stmt->bindParam(':description', $data['description']);
             $stmt->bindParam(':icon', $data['icon']);
+            $stmt->bindParam(':price', $data['price']);
+            $stmt->bindParam(':features', $data['features']);
+            $stmt->bindParam(':popular', $data['popular']);
             $stmt->bindParam(':is_active', $data['is_active']);
             $stmt->bindParam(':sort_order', $data['sort_order']);
             

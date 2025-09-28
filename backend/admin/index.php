@@ -73,6 +73,10 @@ $user = $auth->getCurrentUser();
                     <i class="fas fa-images mr-3"></i>
                     Media Library
                 </a>
+                <a href="services.php" class="sidebar-link flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100">
+                    <i class="fas fa-cogs mr-3"></i>
+                    Services
+                </a>
                 <a href="#settings" class="sidebar-link flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100">
                     <i class="fas fa-cog mr-3"></i>
                     Settings

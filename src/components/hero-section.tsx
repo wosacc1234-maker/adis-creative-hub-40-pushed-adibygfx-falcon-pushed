@@ -49,6 +49,16 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
+            <Link to="/about">
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-2 border-youtube-red text-youtube-red hover:bg-youtube-red hover:text-white font-semibold text-lg px-8 py-4 transition-smooth"
+              >
+                <Play className="mr-2 h-5 w-5" />
+                Watch My Intro
+              </Button>
+            </Link>
             <Link to="/portfolio">
               <Button 
                 variant="outline" 
